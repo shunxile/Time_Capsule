@@ -22,3 +22,33 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# テーブル設計
+
+## users
+| Column             | Type   | Options                   | 
+| ------------------ | ------ | ------------------------- | 
+| last_name          | string | null: false               | 
+| first_name         | string | null: false               | 
+| last_name_kana     | string | null: false               | 
+| first_name_kana    | string | null: false               | 
+| nickname           | string | null: false               | 
+| email              | string | null: false, unique: true | 
+| encrypted_password | string | null: false               | 
+| date_birth         | date   | null: false               | 
+
+### Association
+- has_many :messages
+
+## messages テーブル
+| Column             | Type       | Options     | 
+| ------------------ | ---------- | ----------- | 
+| title              | string     | null: false | 
+| whom               | string     | null: false | 
+| message            | text       |             | 
+| open_plan          | data       | null: false | 
+| encrypted_password | string     | null: false | 
+| user_id            | references | null: false | 
+
+### Association
+- belongs_to :user
