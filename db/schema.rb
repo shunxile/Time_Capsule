@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 2020_12_24_203525) do
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "whom", null: false
-    t.text "message"
+    t.text "message", null: false
     t.date "open_plan", null: false
     t.string "encrypted_password"
-    t.bigint "user_id_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id_id"], name: "index_messages_on_user_id_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

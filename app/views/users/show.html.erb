@@ -1,0 +1,10 @@
+<div class="">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <% if @messages != nil %>
+    <% @messages.each do |message| %>
+      <div class="" style="background-image: url(<%= message.image %>);">
+        <p><%= message.message %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
