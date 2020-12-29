@@ -1,0 +1,27 @@
+.form-wrap {
+  display: flex;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color:black;
+  background-image: url("./TimeCapsel2.png");
+  background-color:rgba(255,255,255,0.5);
+  background-blend-mode:lighten;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-birth-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lists-user {
+  display:flex;
+}

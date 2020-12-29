@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.grid-6 {
+  justify-content: space-around;
+}
+
+.lists-user {
+  justify-content: space-between;
+}
