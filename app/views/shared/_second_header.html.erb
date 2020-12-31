@@ -21,7 +21,7 @@
     <% if user_signed_in? %>
       <li><%= link_to 'Mypage', user_path(current_user) %></li>
     <% end %>
-    <li><%= link_to 'Posting', root_path %></li>
+    <li><%= link_to 'Posting', '/messages/new' %></li>
     <li><%= link_to 'Contact', root_path %></li>
   </ul>
   </nav>
