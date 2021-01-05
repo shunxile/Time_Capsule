@@ -7,14 +7,20 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    if @item.save
+    if @message.save
       redirect_to root_path
     else
       render :new
     end
   end
 
+  def show
+    @user = current_user
+    @messages = Message.all(@user.id)
+  end
+
   private
   def message_params
-    params.require(:message).permit(:)
+    params.require(:message).permit(:title, :whom, :message, :open_plan, :image, :video).merge(user_id: current_user.id)
+  end
 end
