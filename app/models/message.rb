@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :user
-  has_many_attached :images
-  has_many_attached :videos
+  has_one_attached :image
+  has_one_attached :video
 
   with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "は全角で入力してください。"} do
     validates :title

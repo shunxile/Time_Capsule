@@ -15,12 +15,12 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @message = Message.find(params[:id])
+    @user = current_user
+    @messages = Message.all(@user.id)
   end
 
   private
   def message_params
-    params.require(:message).permit(:title, :whom, :message, :open_plan, images: []).merge(user_id: current_user.id)
+    params.require(:message).permit(:title, :whom, :message, :open_plan, :image, :video).merge(user_id: current_user.id)
   end
 end

@@ -3,12 +3,20 @@
 <div class="">
   <div class="">
     <p><%= @user.nickname %>さんの投稿一覧</p>
-    <% if @messages != nil %>
+    
       <% @messages.each do |message| %>
-        <div class="" style="background-image: url(<%= message.image %>);">
-          <p><%= message.message %></p>
+      <div class="contents">
+        <div class="">タイトル：<%= message.title %></div>
+        <div class="">
+        <% if message.video.attached? %>
+          <video src="<%= rails_blob_path(message.video) %>" type="video/mp4" controls></video>
+        <% else %>
+          <%= image_tag message.image if message.image.present? %>
+        <% end %>
         </div>
+        <div class="">誰への想い：<%= message.whom %></div>
+      </div>
       <% end %>
-    <% end %>
+    
   </div>
 </div>
