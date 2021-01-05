@@ -1,20 +1,22 @@
 <%= render "shared/second_header" %>
 
 <div class="">
-  <div class="">
-    <p><%= @user.nickname %>さんの投稿一覧</p>
+  <div class="content">
+    <div class="user"><%= @user.nickname %>さんの投稿一覧</div>
     
       <% @messages.each do |message| %>
       <div class="contents">
-        <div class="">タイトル：<%= message.title %></div>
-        <div class="">
-        <% if message.video.attached? %>
-          <video src="<%= rails_blob_path(message.video) %>" type="video/mp4" controls></video>
-        <% else %>
-          <%= image_tag message.image if message.image.present? %>
-        <% end %>
+        <div class="content-top">
+          <div class="element">タイトル：<%= message.title %></div>
+          <div class="element">誰への想い：<%= message.whom %></div>
         </div>
-        <div class="">誰への想い：<%= message.whom %></div>
+        <div class="content-row">
+          <% if message.video.attached? %>
+            <%= video_tag rails_blob_path(message.video), autoplay: true, muted: true, loop: true, controles: true, class: "video" if message.video.present? %>
+          <% else %>
+            <%= image_tag message.image if message.image.present? %>
+          <% end %>
+        </div>
       </div>
       <% end %>
     
