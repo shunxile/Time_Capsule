@@ -1,11 +1,11 @@
 <%= render "shared/second_header" %>
 
 <div class="">
-  <div class="content">
+  <div class="content-user">
     <div class="user"><%= @user.nickname %>さんの投稿一覧</div>
     
       <% @messages.each do |message| %>
-      <div class="contents">
+      <div class="contents-user">
         <div class="content-top">
           <div class="element">タイトル：<%= message.title %></div>
           <div class="element">誰への想い：<%= message.whom %></div>
