@@ -1,0 +1,51 @@
+<%= render "shared/second_header" %>
+
+<div class="">
+  <h1>想いを残す</h1>
+  <%= form_with model: @message, local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="posting-form">
+    <div class="form">
+      タイトル
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :title, class:"form-title", id:"form-title", placeholder:"タイトル名(必須 50文字以内)", maxlength:"50" %>
+    <div class="form">
+      メッセージ
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :message, class:"form-message", id:"form-message", placeholder:"メッセージ内容(必須 200文字以内)例)20年後の子供の誕生日に見て欲しい動画です。" ,rows:"5", maxlength:"200" %>
+    <div class="form">
+      誰に対してか
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :whom, class:"form-whom", id:"form-whom", placeholder:"子どもたちへ", maxlength:"50" %>
+    <div class="form">
+      開封予定日
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :open_plan, class:"form-open-plan", id:"form-open-plan", placeholder:"2040-08-09" %>
+    <div class="image-form">
+      <div class="form">
+      届ける想い(画像)
+      </div>
+      <div class="click-upload">
+        <p>クリックしてファイルをアップロード</p>
+        <%= f.file_field :image, id:"form-image" %>
+    </div>
+    <div class="video-form">
+      <div class="form">
+      届ける想い(動画)
+      </div>
+      <div class="click-upload">
+        <p>クリックしてファイルをアップロード</p>
+        <%= f.file_field :video, id:"form-video" %>
+    </div>
+  </div>
+  <div class="message-btn-contents">
+    <%= f.submit "記録に残す" ,class:"message-btn" %>
+    <%= link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+  <% end %>
+
+</div>

@@ -21,6 +21,7 @@
 
 .content-top {
   display: flex;
+  justify-content: space-around;
 }
 
 .element {
