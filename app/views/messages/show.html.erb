@@ -38,9 +38,9 @@
         </tr>
     </table>
   </div>
-  <div class="">
+  <div class="media">
     <% if @message.video.attached? %>
-      <%= video_tag rails_blob_path(@message.video), autoplay: true, muted: true, loop: true, controles: true, class: "video" if @message.video.present? %>
+      <%= video_tag rails_blob_path(@message.video), autoplay: true, muted: true, loop: true, controles: true if @message.video.present? %>
     <% else %>
       <%= image_tag @message.image if @message.image.present? %>
     <% end %>
