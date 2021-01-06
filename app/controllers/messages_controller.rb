@@ -18,6 +18,14 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
+  def destroy
+    @message = Message.find(params[:id])
+    if current_user.id == @message.user.id
+      @message.destroy
+      redirect_to root_path
+    end
+  end
+
   private
   def message_params
     params.require(:message).permit(:title, :whom, :message, :open_plan, :image, :video).merge(user_id: current_user.id)
