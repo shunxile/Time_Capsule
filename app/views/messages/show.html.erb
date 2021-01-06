@@ -1,0 +1,48 @@
+<%= render "shared/second_header" %>
+
+<div class="">
+  <div class="">
+  <% if user_signed_in? %>
+    <% if current_user.id == @message.user.id  %>
+      <%= link_to '想いの編集', edit_message_path(@message.id), method: :get, class: "" %>
+      <p class='or-text'>or</p>
+      <%= link_to '削除', "/messages/#{@message.id}", method: :delete, class:'' %>
+    <% end %>
+  <% end %>
+  </div>
+
+  <div class="">
+    <h2><%= @message.title %></h2>
+  </div>
+  <table class="">
+    <thead>
+      <tr>
+        <th colspan="2">投稿内容</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>タイトル</th>
+        <td><%= @message.title %>
+      </tr>
+      <tr>
+        <th>誰に対してか</th>
+        <td><%= @message.whom %>
+      </tr>
+      <tr>
+        <th>開封予定日</th>
+        <td><%= @message.open_plan %>
+      </tr>
+      <tr>
+        <th>メッセージ</th>
+        <td><%= @message.message %>
+      </tr>
+  </table>
+  <div class="">
+    <% if @message.video.attached? %>
+      <%= video_tag rails_blob_path(@message.video), autoplay: true, muted: true, loop: true, controles: true, class: "video" if @message.video.present? %>
+    <% else %>
+      <%= image_tag @message.image if @message.image.present? %>
+    <% end %>
+  </div>
+</div>

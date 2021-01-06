@@ -6,17 +6,19 @@
     
       <% @messages.each do |message| %>
       <div class="contents-user">
-        <div class="content-top">
-          <div class="element">タイトル：<%= message.title %></div>
-          <div class="element">誰への想い：<%= message.whom %></div>
-        </div>
-        <div class="content-row">
-          <% if message.video.attached? %>
-            <%= video_tag rails_blob_path(message.video), autoplay: true, muted: true, loop: true, controles: true, class: "video" if message.video.present? %>
-          <% else %>
-            <%= image_tag message.image if message.image.present? %>
-          <% end %>
-        </div>
+        <%= link_to message_path(message.id), method: :get do %>
+          <div class="content-top">
+            <div class="element">タイトル：<%= message.title %></div>
+            <div class="element">誰への想い：<%= message.whom %></div>
+          </div>
+          <div class="content-row">
+            <% if message.video.attached? %>
+              <%= video_tag rails_blob_path(message.video), autoplay: true, muted: true, loop: true, controles: true, class: "video" if message.video.present? %>
+            <% else %>
+              <%= image_tag message.image if message.image.present? %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
       <% end %>
     

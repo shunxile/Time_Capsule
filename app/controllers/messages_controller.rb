@@ -15,8 +15,8 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @messages = Message.all(@user.id)
+    #@user = User.find(params[:id])
+    @message = Message.find(params[:id])
   end
 
   private
