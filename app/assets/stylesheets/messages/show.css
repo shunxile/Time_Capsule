@@ -1,0 +1,38 @@
+.message-show {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  align-items: center;
+}
+
+.change-btn {
+  margin: 0px 25px;
+  font-size: 30px;
+}
+
+.show-contents {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.detail-table {
+  margin-bottom: 30px;
+  width: 50%;
+  border: 3px solid #dedede;
+}
+
+.detail-message {
+  width: 10%;
+  background-color: ;
+  border: 3px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-content {
+  width: 40%;
+  padding: 10px;
+  border: 3px solid #dedede;
+  font-size: 14px;
+}

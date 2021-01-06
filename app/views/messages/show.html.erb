@@ -1,0 +1,48 @@
+<%= render "shared/second_header" %>
+
+<div class="">
+  <div class="message-show">
+  <% if user_signed_in? %>
+    <% if current_user.id == @message.user.id  %>
+      <%= link_to '想いの編集', edit_message_path(@message.id), method: :get, class: "change-btn" %>
+      <p class='or-text'>or</p>
+      <%= link_to '削除', "/messages/#{@message.id}", method: :delete, class:"change-btn" %>
+    <% end %>
+  <% end %>
+  </div>
+
+  <div class="show-contents">
+    <h2><%= @message.title %></h2>
+    <table class="detail-table">
+      <thead>
+        <tr>
+          <th colspan="2">投稿内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="detail-message">タイトル</th>
+          <td class="detail-content"><%= @message.title %>
+        </tr>
+        <tr>
+          <th class="detail-message">誰に対してか</th>
+          <td class="detail-content"><%= @message.whom %>
+        </tr>
+        <tr>
+          <th class="detail-message">開封予定日</th>
+          <td class="detail-content"><%= @message.open_plan %>
+        </tr>
+        <tr>
+          <th class="detail-message">メッセージ</th>
+          <td class="detail-content"><%= @message.message %>
+        </tr>
+    </table>
+  </div>
+  <div class="">
+    <% if @message.video.attached? %>
+      <%= video_tag rails_blob_path(@message.video), autoplay: true, muted: true, loop: true, controles: true, class: "video" if @message.video.present? %>
+    <% else %>
+      <%= image_tag @message.image if @message.image.present? %>
+    <% end %>
+  </div>
+</div>
