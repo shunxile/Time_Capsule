@@ -12,3 +12,6 @@ ja:
        message: メッセージ
        image: 画像
        video: 動画
+       open_plan: 開封予定日
+       title: タイトル
+       whom: 宛先
