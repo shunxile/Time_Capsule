@@ -3,7 +3,15 @@ ja:
    attributes:
      user:
        nickname: ニックネーム
+       last_name: 苗字
+       first_name: 名前
+       last_name_kana: 苗字(読み)
+       first_name_kana: 名前(読み)
+       birth_date: 生年月日
      message:
        message: メッセージ
        image: 画像
        video: 動画
+       open_plan: 開封予定日
+       title: タイトル
+       whom: 宛先
