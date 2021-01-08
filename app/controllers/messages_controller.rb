@@ -1,6 +1,10 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
+  def index
+    @messages = Message.all
+  end
+
   def new
     @message = Message.new
   end
