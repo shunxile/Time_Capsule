@@ -3,19 +3,36 @@
 
 <div class="container">
   <div class="contents">
-  <section id="new" class="box1">
-  <h2><span>使用例①</span></h2>
-    
-  </section>
+    <section id="new" class="box1">
+      <h3>大切な人へ向けて</h3>
+      <h3><span>メッセージを未来に残しませんか？</span></h3>
+      <img src="assets/TimeCapsule_index.png" alt="">
+      <h4>残したい想いを、届けたい想いを・・・・・</h4>
+    </section>
+  </div>
   <!--/#new-->
 
   <section class="box1">
-
-  <h2><span>使用例②</span></h2>
-
+  <h2><span>投稿一覧</span></h2>
+    <div>
+      <ul>
+      <% @messages.each do |message| %>
+        <li>
+          <div>
+          <%= link_to message_path(message.id), method: :get do %>
+            <%= message.title %>
+            <%= link_to user_path(message.user.id), method: :get do %>
+              <p><%= message.user.nickname %></p>
+            <% end %>
+          <% end %>
+          </div>
+        </li>
+      <% end %>
+      </ul>
+    </div>
   </section>
 
-  </div>
+
 <!--/#contents-->
 <%= render "shared/footer" %>
 </div>
