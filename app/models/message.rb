@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :user
-  has_one_attached :image
-  has_one_attached :video
+  has_many_attached :images
+  has_many_attached :videos
 
   with_options presence: true, length: { maximum: 50 } do
     validates :title
