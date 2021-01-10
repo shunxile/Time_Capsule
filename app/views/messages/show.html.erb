@@ -4,7 +4,7 @@
   <div class="message-show">
   <% if user_signed_in? %>
     <% if current_user.id == @message.user.id  %>
-      <%= link_to '想いの編集', edit_message_path(@message.id), method: :get, class: "change-btn" %>
+      <%= link_to '想いの更新', edit_message_path(@message.id), method: :get, class: "change-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', "/messages/#{@message.id}", method: :delete, class:"change-btn" %>
     <% end %>
@@ -12,7 +12,6 @@
   </div>
 
   <div class="show-contents">
-    <h2><%= @message.title %></h2>
     <table class="detail-table">
       <thead>
         <tr>
@@ -40,9 +39,9 @@
   </div>
   <div class="media">
     <% if @message.video.attached? %>
-      <%= video_tag rails_blob_path(@message.video), autoplay: true, muted: true, loop: true, controles: true if @message.video.present? %>
+      <%= video_tag rails_blob_path(@message.video), autoplay: true, muted: true, loop: true, controles: true, class: 'media-video' if @message.video.present? %>
     <% else %>
-      <%= image_tag @message.image if @message.image.present? %>
+      <p><%= image_tag @message.image, class: 'media-image' if @message.image.present? %></p>
     <% end %>
   </div>
 </div>

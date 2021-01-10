@@ -2,20 +2,42 @@
 <%= render "shared/second_header" %>
 
 <div class="container">
-  <div class="contents">
-  <section id="new" class="box1">
-  <h2><span>使用例①</span></h2>
-
-  </section>
+  <div class="box1">
+    <div class="box-message">
+      <h3>大切な人へ向けて</h3>
+      <h3 class="message-bottom"><span>メッセージを未来に</span>残しませんか？</h3>
+      <img src="assets/TimeCapsule_index.png" alt="">
+      <h4>残したい想いを、</h4>
+      <h4><span>届けたい想いを・・・・・</span></h4>
+    </div>
+  </div>
   <!--/#new-->
 
-  <section class="box1">
-
-  <h2><span>使用例②</span></h2>
-
+  <section class="box2">
+  <h2><span>投稿一覧</span></h2>
+    <div class="message-index">
+      <ul class="message-list">
+      <% @messages.each do |message| %>
+        <li>
+          <div class="message">
+            <div class="information1">
+              <%= link_to message_path(message.id), method: :get do %>
+                タイトル名：<%= message.title %>
+              <% end %>
+            </div>
+            <div class="information2">
+              <%= link_to user_path(message.user.id), method: :get do %>
+                ユーザー名：<%= message.user.nickname %>
+              <% end %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+      </ul>
+    </div>
   </section>
 
-  </div>
+
 <!--/#contents-->
 <%= render "shared/footer" %>
 </div>

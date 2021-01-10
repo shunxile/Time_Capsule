@@ -1,0 +1,79 @@
+.box1,.box2 {
+  width: 76%;
+  line-height: 8vh;
+  margin: 10px 0;
+}
+
+.box1 h3 {
+  font-size: 3.5vh;
+}
+
+.box1 h3 span {
+  color: red;
+}
+
+.box1 h4 {
+  font-size: 3.5vh;
+}
+
+.message-bottom {
+  margin-left: 4.1vw;
+}
+
+.box1 h4 span {
+  margin-left: 10vw;
+}
+
+.box2 h2 {
+  font-size: 5vh;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.message-index {
+  line-height: 4vh;
+}
+
+.message {
+  width: 100%;
+  display: flex;
+  background-color: rgb(41, 46, 51);
+  margin: 5vw; 
+}
+
+.message span {
+  margin-left: 10vw;
+}
+
+.message-information {
+  display: flex;
+  width: 100%;
+}
+
+.information1 {
+  width: 100%;
+  padding-left: 3vw;
+}
+
+.information2 {
+  width: 100%;
+}
+
+.message-list {
+  padding-right: 10vw;
+}
+
+.box-message {
+  display: flex;
+  flex-direction: column;
+}
+
+.box-message h3,.box-message h4 {
+  padding-left: 8vw;
+}
+

@@ -1,6 +1,5 @@
 <div class='nav'>
     <ul class='lists-user'>
-      <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
       <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <li><%= link_to current_user.nickname, root_path, class: "user-nickname" %></li>
@@ -12,16 +11,15 @@
             <li><%= link_to "新規登録", new_user_registration_path, class: "sign-up" %></li>
           </div>
         <% end %>
-      <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
     </ul>
-  </div>
-  <nav id="menubar">
+</div>
+<nav id="menubar">
   <ul class="current">
     <li><%= link_to 'Home', root_path %></li>
     <% if user_signed_in? %>
       <li><%= link_to 'Mypage', user_path(current_user) %></li>
     <% end %>
     <li><%= link_to 'Posting', '/messages/new' %></li>
-    <li><%= link_to 'Contact', root_path %></li>
+    <li><%= link_to 'Search', root_path %></li>
   </ul>
-  </nav>
+</nav>

@@ -11,13 +11,13 @@
             <div class="element">タイトル：<%= message.title %></div>
             <div class="element">誰への想い：<%= message.whom %></div>
           </div>
-          <div class="content-row">
+          <p class="content-row">
             <% if message.video.attached? %>
               <%= video_tag rails_blob_path(message.video), autoplay: true, muted: true, loop: true, controles: true, class: "video" if message.video.present? %>
             <% else %>
               <%= image_tag message.image if message.image.present? %>
             <% end %>
-          </div>
+          </p>
         <% end %>
       </div>
       <% end %>
