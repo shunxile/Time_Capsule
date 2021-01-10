@@ -1,13 +1,17 @@
 .message-show {
   display: flex;
   justify-content: center;
-  margin: 10px;
+  margin: 1vw;
   align-items: center;
 }
 
+.or-text {
+  font-size: 3vw;
+}
+
 .change-btn {
-  margin: 0px 25px;
-  font-size: 30px;
+  margin: 0 2.5vw;
+  font-size: 4vw;
 }
 
 .show-contents {
@@ -17,33 +21,40 @@
 }
 
 .detail-table {
-  margin-bottom: 30px;
-  width: 50%;
-  border: 3px solid #dedede;
+  margin-bottom: 5vw;
+  width: 60%;
+  border: 0.5vw solid #dedede;
 }
 
 .detail-message {
-  width: 15%;
-  border: 3px solid #dedede;
-  font-size: 14px;
+  width: 20%;
+  border: 0.5vw solid #dedede;
+  font-size: 2.5vw;
   text-align: center;
 }
 
 .detail-content {
   width: 40%;
-  padding: 10px;
-  border: 3px solid #dedede;
-  font-size: 14px;
+  padding: 1.5vw;
+  border: 0.5vw solid #dedede;
+  font-size: 2.5vw;
 }
 
 .media {
-  display:flex;
-  align-items:center;
-  flex-direction:column;
-  justify-content: space-between;
-  width: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-bottom: 10vw;
 }
 
-.media img {
-  width: 50%;
+.media-image,.media-video {
+  height: 40vh;
+  width: 60vw;
+  background-color: whitesmoke;
+  object-fit: contain;
+}
+
+nav {
+  background-color: green;
 }
