@@ -14,8 +14,8 @@
         <% end %>
       <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
     </ul>
-  </div>
-  <nav id="menubar">
+</div>
+<nav id="menubar">
   <ul class="current">
     <li><%= link_to 'Home', root_path %></li>
     <% if user_signed_in? %>
@@ -24,4 +24,4 @@
     <li><%= link_to 'Posting', '/messages/new' %></li>
     <li><%= link_to 'Search', root_path %></li>
   </ul>
-  </nav>
+</nav>

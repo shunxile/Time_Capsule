@@ -1,0 +1,74 @@
+.new-message {
+  background-color:aliceblue;
+  color:black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.indispensable {
+  background:tomato;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.new-message h1 {
+  font-size: 5vw;
+}
+
+.posting-form {
+  width: 100%;
+}
+
+.form {
+  width: 100%;
+  height: 3.5vh;
+  padding: 1vw;
+  margin: 0.8vw;
+}
+
+.form-title,.form-whom {
+  width: 100%;
+  height: 3.5vh;
+  padding: 1vw;
+}
+
+.form-message {
+  height: 15vh;
+  width: 100%;
+  padding: 1vw;
+}
+
+.form-open-plan {
+  display: flex;
+}
+
+.form-open-plan>p {
+  margin: 0 1vw;
+}
+
+.form-caution {
+  margin-top:4vw;
+}
+
+.message-btn-contents {
+  text-align: center;
+  margin: 5vw 0;
+}
+
+.message-btn {
+  width: 20vw;
+  height: 5vh;
+  margin: 0 3vw;
+}
+
+.back-btn {
+  width: 20vw;
+  height: 5vh;
+  margin: 0 3vw;
+  color: black;
+}
