@@ -25,6 +25,9 @@
   width: 50%;
   color:black;
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .content-row {
@@ -43,4 +46,8 @@
 .video {
   width: 100%;
   background-size: cover;
+}
+
+.content-row video {
+  padding: 1vw 0;
 }
