@@ -43,7 +43,7 @@
       </div>
       <div class="click-upload">
         <p>クリックしてファイルをアップロード</p>
-        <%= f.file_field :image, id:"form-image" %>
+        <%= f.file_field :images, name: 'message[images][]', id:"form-image" %>
       </div>
     </div>
     <div class="video-form">
