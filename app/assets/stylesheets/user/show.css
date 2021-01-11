@@ -29,10 +29,15 @@
 
 .content-row {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   width: 70%;
   margin: 0 auto;
   height: auto;
+}
+
+.content-row img {
+  padding: 1vw 0;
 }
 
 .video {
