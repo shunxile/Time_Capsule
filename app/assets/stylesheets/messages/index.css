@@ -58,10 +58,16 @@
 .information1 {
   width: 100%;
   padding-left: 3vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .information2 {
   width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .message-list {

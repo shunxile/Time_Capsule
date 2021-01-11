@@ -76,3 +76,8 @@
 .click-upload img {
   width: 40vw;
 }
+
+.image-element {
+  display: flex;
+  align-items: flex-end;
+}

@@ -25,17 +25,29 @@
   width: 50%;
   color:black;
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .content-row {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   width: 70%;
   margin: 0 auto;
   height: auto;
 }
 
+.content-row img {
+  padding: 1vw 0;
+}
+
 .video {
   width: 100%;
   background-size: cover;
+}
+
+.content-row video {
+  padding: 1vw 0;
 }
