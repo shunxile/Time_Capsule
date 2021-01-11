@@ -12,10 +12,8 @@
             <div class="element">誰への想い：<%= message.whom %></div>
           </div>
           <p class="content-row">
-            <% if message.videos.attached? %>
-              <% message.videos.each do |video| %>
-                <%= video_tag video, autoplay: true, muted: true, loop: true, controles: true, class: "video" if message.videos.present? %>
-              <% end %>
+            <% if message.video.attached? %>
+              <%= video_tag rails_blob_path(message.video), autoplay: true, muted: true, loop: true, controles: true, class: "video" if message.video.present? %>
             <% else %>
               <% message.images.each do |image| %>
                <%= image_tag image if message.images.present? %>

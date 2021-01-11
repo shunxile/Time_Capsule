@@ -48,6 +48,6 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:title, :whom, :message, :open_plan, images: [], videos: []).merge(user_id: current_user.id)
+    params.require(:message).permit(:title, :whom, :message, :open_plan, :video, images: []).merge(user_id: current_user.id)
   end
 end

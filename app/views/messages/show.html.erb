@@ -38,10 +38,8 @@
     </table>
   </div>
   <div class="media">
-    <% if @message.videos.attached? %>
-      <% @message.videos.each do |video| %>
-        <%= video_tag rails_blob_path(@message.videos), autoplay: true, muted: true, loop: true, controles: true, class: 'media-video' if @message.videos.present? %>
-      <% end %>
+    <% if @message.video.attached? %>
+        <%= video_tag rails_blob_path(@message.video), autoplay: true, muted: true, loop: true, controles: true, class: 'media-video' if @message.video.present? %>
     <% else %>
       <% @message.images.each do |image| %>
         <%= image_tag image, class: 'media-image' if @message.images.present? %>
