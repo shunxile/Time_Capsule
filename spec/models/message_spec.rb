@@ -61,7 +61,7 @@ RSpec.describe Message, type: :model do
     it "open_planが空だと保存できない" do
       @message.open_plan = nil
       @message.valid?
-      expect(@message.errors.full_messages).to include("開封予定日を入力してください", "開封予定日は『-』を使い正しく入力してください")
+      expect(@message.errors.full_messages).to include("開封予定日を入力してください")
     end
     it "user_idが空だと保存できない" do
       @message.user_id = nil
