@@ -1,6 +1,6 @@
-class MessageTagForm
+class MessageTag
 
-  include ActiveModel::ActiveModel
+  include ActiveModel::Model
   attr_accessor :title, :whom, :open_plan, :message, :images, :video, :name
 
   with_options presence: true, length: { maximum: 50 } do
@@ -16,9 +16,10 @@ class MessageTagForm
   end
 
   def save
-    message = Message.create(title: title, whom: whom, open_plan: open_plan, message: message, images: images, video:, video)
-    tag = Tag.create(name: name)
+    message = Message.create(title: title, whom: whom, open_plan: open_plan, message: message, images: images, video: video)
+    tag = Tag.where(name: name).first_or_initialeze
+    tag.save
 
-    MessaeTagForm.create(message_id: messag.id, tag_id: tag.id)
+    MessageTagForm.create(message_id: message.id, tag_id: tag.id)
   end
 end

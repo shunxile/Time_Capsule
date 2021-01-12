@@ -1,6 +1,6 @@
 <div class="new-message">
   <h1>残したい想い</h1>
-  <%= form_with model: @message, local: true do |f| %>
+  <%= form_with model: @message, url: messages_path, local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <div class="posting-form">
     <div class="form">

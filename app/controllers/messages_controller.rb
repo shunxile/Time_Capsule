@@ -6,13 +6,14 @@ class MessagesController < ApplicationController
   end
 
   def new
-    @message = Message.new
+    @message = MessageTag.new
   end
 
   def create
-    @message = Message.new(message_params)
-    if @message.save
-      redirect_to root_path
+    @message = MessageTag.new(message_params)
+    if @message.valid?
+      @message.save
+      return redirect_to root_path
     else
       render :new
     end
