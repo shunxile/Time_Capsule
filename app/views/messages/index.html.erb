@@ -1,6 +1,13 @@
 <%= render "shared/header" %>
 <%= render "shared/second_header" %>
 
+<div class="search-form">
+  <%= form_with(url: search_messages_path, local: true, method: :get) do |form| %>
+    <%= form.text_field :keyword, placeholder: "想いを検索する", class: "search-form-element" %>
+    <%= form.submit "検索", class: "search-form-btn" %>
+  <% end %>
+</div>
+
 <div class="container">
   <div class="box1">
     <div class="box-message">

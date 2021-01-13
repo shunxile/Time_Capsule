@@ -47,8 +47,14 @@ class MessagesController < ApplicationController
     end
   end
 
+  def search
+    return nil if params[:keyword] == ""
+    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"] )
+    render json:{ keyword: tag }
+  end
+
   private
   def message_params
-    params.require(:message).permit(:title, :whom, :message, :open_plan, :video, images: []).merge(user_id: current_user.id)
+    params.require(:message_tag).permit(:title, :whom, :message, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)
   end
 end

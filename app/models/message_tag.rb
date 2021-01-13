@@ -1,7 +1,9 @@
 class MessageTag
 
   include ActiveModel::Model
-  attr_accessor :title, :whom, :open_plan, :message, :images, :video, :name
+  include ActiveModel::Attributes
+  include ActiveRecord::AttributeAssignment
+  attr_accessor :title, :whom, :open_plan, :message, :images, :video, :name, :user_id
 
   with_options presence: true, length: { maximum: 50 } do
     validates :title
@@ -16,8 +18,8 @@ class MessageTag
   end
 
   def save
-    message = Message.create(title: title, whom: whom, open_plan: open_plan, message: message, images: images, video: video)
-    tag = Tag.where(name: name).first_or_initialeze
+    @message = Message.create(title: title, whom: whom, open_plan: open_plan, message: message, images: images, video: video, user_id: user_id)
+    tag = Tag.where(name: name).first_or_initialize
     tag.save
 
     MessageTagForm.create(message_id: message.id, tag_id: tag.id)
