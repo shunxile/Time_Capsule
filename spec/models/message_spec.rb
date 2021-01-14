@@ -4,7 +4,7 @@ RSpec.describe Message, type: :model do
   before do
     @user = FactoryBot.create(:user)
     @message = FactoryBot.build(:message, user_id: @user.id)
-    @message.image = fixture_file_upload('public/images/test_image.png')
+    @message.images = fixture_file_upload('public/images/test_image.png')
     @message.video = fixture_file_upload('public/videos/test_video.mp4')
   end
 
@@ -12,8 +12,8 @@ RSpec.describe Message, type: :model do
     it "title・message・open_plan・whomがあれば保存できる" do
       expect(@message).to be_valid
     end
-    it "imageが空でも保存できる" do
-      @message.image = nil
+    it "imagesが空でも保存できる" do
+      @message.images = nil
       expect(@message).to be_valid
     end
     it "videoが空でも保存できる" do
@@ -21,7 +21,7 @@ RSpec.describe Message, type: :model do
       expect(@message).to be_valid
     end
     it "image・videoが空でも保存できる" do
-      @message.image = nil
+      @message.images = nil
       @message.video = nil
       expect(@message).to be_valid
     end
@@ -31,6 +31,7 @@ RSpec.describe Message, type: :model do
     it "titleが空だと保存できない" do
       @message.title = nil
       @message.valid?
+      binding.pry
       expect(@message.errors.full_messages).to include("タイトルを入力してください")
     end
     it "titleが50文字以上だと保存できない" do
@@ -61,7 +62,7 @@ RSpec.describe Message, type: :model do
     it "open_planが空だと保存できない" do
       @message.open_plan = nil
       @message.valid?
-      expect(@message.errors.full_messages).to include("開封予定日を入力してください", "開封予定日は『-』を使い正しく入力してください")
+      expect(@message.errors.full_messages).to include("開封予定日を入力してください")
     end
     it "user_idが空だと保存できない" do
       @message.user_id = nil

@@ -83,3 +83,18 @@
   padding-left: 8vw;
 }
 
+.search-form {
+  text-align: center;
+}
+
+.search-form-element {
+  width: 40vw;
+  height: 5vh;
+  margin: 3vw 3vw;
+}
+
+.search-form-btn {
+  height: 5vh;
+  width: 7vw;
+  margin: 3vw 3vw;
+}

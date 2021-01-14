@@ -1,18 +1,21 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :search_message, only: [:index, :search]
 
   def index
+    @q = Message.ransack(params[:q])
     @messages = Message.includes(:user).order("created_at DESC")
   end
 
   def new
-    @message = Message.new
+    @message = MessageTag.new
   end
 
   def create
-    @message = Message.new(message_params)
-    if @message.save
-      redirect_to root_path
+    @message = MessageTag.new(message_params)
+    if @message.valid?
+      @message.save
+      return redirect_to root_path
     else
       render :new
     end
@@ -46,8 +49,21 @@ class MessagesController < ApplicationController
     end
   end
 
+  def search
+    set_search
+  end
+
   private
   def message_params
-    params.require(:message).permit(:title, :whom, :message, :open_plan, :video, images: []).merge(user_id: current_user.id)
+    params.require(:message_tag).permit(:title, :whom, :message, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)
+  end
+
+  def search_message
+    @m = Message.ransack(params[:q])
+  end
+
+  def set_search
+    @search = Message.ransack(params[:q])
+    @search_messages = @search.result(distinct: true).order(created_at: "DESC").includes(:user)
   end
 end

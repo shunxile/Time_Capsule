@@ -1,6 +1,6 @@
 <div class="new-message">
   <h1>残したい想い</h1>
-  <%= form_with model: @message, local: true do |f| %>
+  <%= form_with model: @message, url: messages_path, local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <div class="posting-form">
     <div class="form">
@@ -43,7 +43,7 @@
       </div>
       <div class="click-upload">
         <p>クリックしてファイルをアップロード</p>
-        <%= f.file_field :images, name: 'message[images][]', id:"form-image" %>
+        <%= f.file_field :images, name: 'message_tag[images][]', id:"form-image" %>
         <div id="image-list"></div>
       </div>
     </div>
@@ -56,6 +56,10 @@
         <%= f.file_field :video, id:"form-video" %>
       </div>
     </div>
+    <div class="tag-form">
+    タグ
+    </div>
+    <%= f.text_field :name, id:"form-tag", placeholder:"誕生日", maxlength:"20"%>
   </div>
   <div class="message-btn-contents">
     <%= f.submit "想いを残す" ,class:"message-btn" %>
