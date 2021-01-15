@@ -59,15 +59,15 @@ https://time-capsule1260.herokuapp.com/
 # 実装した機能についてのGIFと説明
 ##### 新規投稿機能
 タイトル・メッセージ・誰に宛てたものか・開封予定日・タグの必須情報を入力することで新しく記事を投稿することができる。
-![新規投稿画面](images/TimeCapsule_README1.png)
+![新規投稿画面](app/assets/images/TimeCapsule_README1.png)
 
 ##### 個人投稿一覧機能
 特定ユーザー１人が投稿した記事を一覧で表示され表示されている記事１つを選択する事で記事の詳細画面へ遷移することができる。
-![個人詳細画面](images/TimeCapsule_README2.png)
+![個人詳細画面](app/assets/images/TimeCapsule_README2.png)
 
 ##### 投稿詳細機能
 投稿された記事の内容を閲覧するためのページへ遷移することができ、このページから投稿内容の編集や削除することができる。
-![投稿記事詳細機能](images/TimeCapsule_README3.png)
+![投稿記事詳細機能](app/assets/images/TimeCapsule_README3.png)
 
 # 実装予定の機能
 ##### 投稿記事閲覧制限機能
