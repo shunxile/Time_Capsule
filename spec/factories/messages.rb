@@ -1,13 +1,11 @@
 FactoryBot.define do
   factory :message do
-    title {Faker::Lorem.sentence}
-    message {Faker::Lorem.sentence}
-    whom {Faker::Name.name}
-    open_plan {Faker::Date.between(from: 1.day.from_now, to: 100.years.from_now).strftime('%Y-%m-%d')}
     association :user
-
-    after(:build) do |message|
-      message.images.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    after(:build) do |message_tag|
+      message_tag.images.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    end
+    after(:build) do |message_tag|
+      message_tag.video.attach(io: File.open('public/videos/test_video.mp4'), filename: 'test_video.mp4')
     end
   end
 end
