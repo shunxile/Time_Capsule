@@ -10,8 +10,20 @@ ja:
        birth_date: 生年月日
      message:
        message: メッセージ
-       image: 画像
+       images: 画像
        video: 動画
        open_plan: 開封予定日
        title: タイトル
        whom: 宛先
+     tag:
+       name: タグ
+ activemodel:
+   attributes:
+     message_tag:
+       message: メッセージ
+       images: 画像
+       video: 動画
+       open_plan: 開封予定日
+       title: タイトル
+       whom: 宛先
+       name: タグ
