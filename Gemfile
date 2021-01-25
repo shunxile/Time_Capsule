@@ -67,3 +67,4 @@ gem 'rails-i18n'
 gem 'mini_magick'
 gem 'gimei'
 gem 'ransack'
+gem "aws-sdk-s3", require: false

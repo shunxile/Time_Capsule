@@ -56,6 +56,10 @@
         <%= f.file_field :video, id:"form-video" %>
       </div>
     </div>
+    <div class="tag-form">
+    タグ
+    </div>
+    <%= f.text_field :name, id:"form-tag", placeholder:"誕生日", maxlength:"20"%>
   </div>
   <div class="message-btn-contents">
     <%= f.submit "想いを更新する" ,class:"message-btn" %>

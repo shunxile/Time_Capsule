@@ -58,6 +58,10 @@ class MessagesController < ApplicationController
     params.require(:message_tag).permit(:title, :whom, :message, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)
   end
 
+  def update_message_params
+    params.require(:message_tag).permit(:title, :whom, :message, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)
+  end
+
   def search_message
     @m = Message.ransack(params[:q])
   end
