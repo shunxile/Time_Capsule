@@ -25,24 +25,6 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
-  def edit
-    @message = Message.find(params[:id])
-    tag = @message.tags
-    if current_user.id != @message.user.id
-      redirect_to root_path
-    end
-  end
-
-  def update
-    @message = Message.find(params[:id])
-    binding.pry
-    if @message = MessageTag.new.update(update_message_params)
-      redirect_to root_path
-    else
-      :edit
-    end
-  end
-
   def destroy
     @message = Message.find(params[:id])
     if current_user.id == @message.user.id
