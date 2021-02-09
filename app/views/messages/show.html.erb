@@ -4,8 +4,6 @@
   <div class="message-show">
   <% if user_signed_in? %>
     <% if current_user.id == @message.user.id  %>
-      <%= link_to '想いの更新', edit_message_path(@message.id), method: :get, class: "change-btn" %>
-      <p class='or-text'>or</p>
       <%= link_to '削除', "/messages/#{@message.id}", method: :delete, class:"change-btn" %>
     <% end %>
   <% end %>

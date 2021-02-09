@@ -8,13 +8,13 @@ class MessagesController < ApplicationController
   end
 
   def new
-    @message = MessageTag.new
+    @message_tag = MessageTag.new
   end
 
   def create
-    @message = MessageTag.new(message_params)
-    if @message.valid?
-      @message.save
+    @message_tag = MessageTag.new(message_params)
+    if @message_tag.valid?
+      @message_tag.save
       return redirect_to root_path
     else
       render :new
@@ -23,22 +23,6 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
-  end
-
-  def edit
-    @message = Message.find(params[:id])
-    if current_user.id != @message.user.id
-      redirect_to root_path
-    end
-  end
-
-  def update
-    @message = Message.find(params[:id])
-    if @message.update(message_params)
-      redirect_to message_path(@message.id)
-    else
-      render :edit
-    end
   end
 
   def destroy
@@ -55,11 +39,11 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message_tag).permit(:title, :whom, :message, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)
+    params.require(:message_tag).permit(:title, :message, :whom, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)
   end
 
   def update_message_params
-    params.require(:message_tag).permit(:title, :whom, :message, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)
+    params.require(:message).permit(:title, :message, :whom, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)
   end
 
   def search_message

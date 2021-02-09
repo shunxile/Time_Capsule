@@ -21,16 +21,6 @@ class MessageTag
     @message = Message.create(title: title, whom: whom, open_plan: open_plan, message: message, images: images, video: video, user_id: user_id)
     tag = Tag.find_or_create_by(name: name)
 
-    MessageTagForm.create(message_id: message.id, tag_id: tag.id)
-  end
-
-  def update
-    @message = Message.update(title: title, whom: whom, open_plan: open_plan, message: message, images: images, video: video, user_id: user_id)
-    tag = Tag.find_or_create_by(name: name)
-
-    MessageTagForm.update(message_id: message.id, tag_id: tag.id)
-  end
-
-  def find
+    @message_tag = MessageTagForm.create(message_id: message.id, tag_id: tag.id)
   end
 end
