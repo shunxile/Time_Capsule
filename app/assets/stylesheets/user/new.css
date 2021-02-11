@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   color:black;
-  background-image: url("./TimeCapsel2.png");
+  background-image: image-url("./TimeCapsel2.png");
   background-color:rgba(255,255,255,0.5);
   background-blend-mode:lighten;
 }
