@@ -37,6 +37,10 @@ class MessagesController < ApplicationController
     set_search
   end
 
+  def authentication
+    @message = Message.find(params[:id])
+  end
+
   private
   def message_params
     params.require(:message_tag).permit(:title, :message, :whom, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)

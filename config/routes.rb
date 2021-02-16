@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :messages do
     collection do
       get 'search'
+      get 'authentication'
     end
   end
   resources :users
