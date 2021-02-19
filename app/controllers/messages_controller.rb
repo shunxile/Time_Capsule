@@ -23,6 +23,11 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
+    if @message.password == @authentication.password
+      render :show
+    else
+      redirect_to authentication_messages_path
+    end
   end
 
   def destroy
@@ -38,7 +43,6 @@ class MessagesController < ApplicationController
   end
 
   def authentication
-    @message = Message.find(params[:id])
   end
 
   private

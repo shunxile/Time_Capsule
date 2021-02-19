@@ -27,7 +27,7 @@
         <li>
           <div class="message">
             <div class="information1">
-              <%= link_to message_path(message.id), method: :get do %>
+              <%= link_to authentication_messages_path(message.id), method: :get do %>
                 タイトル名：<%= message.title %>
               <% end %>
             </div>
