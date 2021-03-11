@@ -47,11 +47,11 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message_tag).permit(:title, :message, :whom, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)
+    params.require(:message_tag).permit(:title, :message, :whom, :open_plan, :name, :encryted_password, :video, images: []).merge(user_id: current_user.id)
   end
 
   def update_message_params
-    params.require(:message).permit(:title, :message, :whom, :open_plan, :name, :video, images: []).merge(user_id: current_user.id)
+    params.require(:message).permit(:title, :message, :whom, :open_plan, :name, :encryted_password, :video, images: []).merge(user_id: current_user.id)
   end
 
   def search_message

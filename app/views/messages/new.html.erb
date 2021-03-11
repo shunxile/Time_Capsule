@@ -56,10 +56,16 @@
         <%= f.file_field :video, id:"form-video" %>
       </div>
     </div>
-    <div class="tag-form">
+    <div class="form">
     タグ
+    <span class="indispensable">必須</span>
     </div>
     <%= f.text_field :name, id:"form-tag", placeholder:"誕生日", maxlength:"20"%>
+    <div class="form">
+    パスワード
+    </div>
+    <div class="password-caution">8~16文字で設定してください</div>
+    <%= f.text_field :encryted_password, id:"form-password", placeholder:"", maxlength:"16", minlength:"8" %>
   </div>
   <div class="message-btn-contents">
     <%= f.submit "想いを残す" ,class:"message-btn" %>
